@@ -1,0 +1,160 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'fiap_challenge_totvs'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'fiap_challenge_totvs'
+
+seeds:
+  +schema: raw 
+  +encoding: "ANSI"
+  +delimiter: ";"
+  fiap_challenge_totvs:  
+    dados_clientes:
+      +column_types:
+        CD_CLIENTE: nvarchar(4000)
+        DS_PROD: nvarchar(4000)
+        DS_LIN_REC: nvarchar(4000)
+        DS_CNAE: nvarchar(4000)
+        DS_SEGMENTO: nvarchar(4000)
+        DS_SUBSEGMENTO: nvarchar(4000)
+        FAT_FAIXA: nvarchar(4000)
+        MARCA_TOTVS: nvarchar(4000)
+        MODAL_COMERC: nvarchar(4000)
+        PAIS: nvarchar(4000)
+        PERIODICIDADE: nvarchar(4000)
+        SITUACAO_CONTRATO: nvarchar(4000)
+        UF: nvarchar(4000)
+        VL_TOTAL_CONTRATO: nvarchar(4000)
+        DT_ASSINATURA_CONTRATO: nvarchar(4000)
+    contratacoes_ultimos_12_meses:
+      +column_types:
+        CD_CLIENTE: nvarchar(4000)
+        QTD_CONTRATACOES_12M: nvarchar(4000)
+        VLR_CONTRATACOES_12M: nvarchar(4000)
+    historico:
+      +column_types:
+        NR_PROPOSTA: nvarchar(4000)
+        ITEM_PROPOSTA: nvarchar(4000)
+        DT_UPLOAD: nvarchar(4000)
+        HOSPEDAGEM: nvarchar(4000)
+        CD_CLI: nvarchar(4000)
+        FAT_FAIXA: nvarchar(4000)
+        CD_PROD: nvarchar(4000)
+        QTD: nvarchar(4000)
+        MESES_BONIF: nvarchar(4000)
+        VL_PCT_DESC_TEMP: nvarchar(4000)
+        VL_PCT_DESCONTO: nvarchar(4000)
+        PRC_UNITARIO: nvarchar(4000)
+        VL_DESCONTO_TEMPORARIO: nvarchar(4000)
+        VL_TOTAL: nvarchar(4000)
+        VL_FULL: nvarchar(4000)
+        VL_DESCONTO: nvarchar(4000)
+    mrr:
+      +column_types:
+        CLIENTE: nvarchar(4000)
+        MRR_12M: nvarchar(4000)
+    nps_relacional:
+      +column_types:
+        respondedAt: nvarchar(4000)
+        metadata_codcliente: nvarchar(4000)
+        resposta_NPS: nvarchar(4000)
+        resposta_unidade: nvarchar(4000)
+        Nota_SupTec_Agilidade: nvarchar(4000)
+        Nota_SupTec_Atendimento: nvarchar(4000)
+        Nota_Comercial: nvarchar(4000)
+        Nota_Custos: nvarchar(4000)
+        Nota_AdmFin_Atendimento: nvarchar(4000)
+        Nota_Software: nvarchar(4000)
+        Nota_Software_Atualizacao: nvarchar(4000)
+    nps_transacional_aquisicao:
+      +column_types:
+        Cod. Cliente: nvarchar(4000)
+        Data da Resposta: nvarchar(4000)
+        Nota NPS: nvarchar(4000)
+        Nota Agilidade: nvarchar(4000)
+        Nota Conhecimento: nvarchar(4000)
+        Nota Custo: nvarchar(4000)
+        Nota Facilidade: nvarchar(4000)
+        Nota Flexibilidade: nvarchar(4000)
+    nps_transacional_implantacao:
+      +column_types:
+        Cod. Cliente: nvarchar(4000)
+        Data da Resposta: nvarchar(4000)
+        Nota NPS: nvarchar(4000)
+        Nota Metodologia: nvarchar(4000)
+        Nota Gestao: nvarchar(4000)
+        Nota Conhecimento: nvarchar(4000)
+        Nota Qualidade: nvarchar(4000)
+        Nota Comunicacao: nvarchar(4000)
+        Nota Prazos: nvarchar(4000)
+    nps_transacional_onboarding:
+      +column_types:
+        Data de resposta: nvarchar(4000)
+        Cod Cliente: nvarchar(4000)
+        Em uma escala de 0 a 10, quanto voce recomenda o Onboarding da TOTVS para um amigo ou colega?: nvarchar(4000)
+        Em uma escala de 0 a 10, o quanto voce acredita que o atendimento CS Onboarding ajudou no inicio da sua trajetoria com a TOTVS?: nvarchar(4000)
+        Duracao do tempo na realizacao da reuniao de Onboarding: nvarchar(4000)
+        Clareza no acesso aos canais de comunicacao da TOTVS: nvarchar(4000)
+        Clareza nas informacoes em geral transmitidas pelo CS que lhe atendeu no Onboarding: nvarchar(4000)
+        Expectativas atendidas no Onboarding da TOTVS: nvarchar(4000)
+    nps_transacional_produto:
+      +column_types:
+        Data da Resposta: nvarchar(4000)
+        Linha de Produto: nvarchar(4000)
+        Nome do Produto: nvarchar(4000)
+        Nota: nvarchar(4000)
+        Cod. T: nvarchar(4000)
+    nps_transacional_suporte:
+      +column_types:
+        ticket: nvarchar(4000)
+        resposta_NPS: nvarchar(4000)
+        grupo_NPS: nvarchar(4000)
+        Nota_ConhecimentoAgente: nvarchar(4000)
+        Nota_Solucao: nvarchar(4000)
+        Nota_TempoRetorno: nvarchar(4000)
+        Nota_Facilidade: nvarchar(4000)
+        Nota_Satisfacao: nvarchar(4000)
+        cliente: nvarchar(4000)
+    tickets:
+      +column_types:
+        CODIGO_ORGANIZACAO: nvarchar(4000)
+        NOME_GRUPO: nvarchar(4000)
+        TIPO_TICKET: nvarchar(4000)
+        STATUS_TICKET: nvarchar(4000)
+        DT_CRIACAO: nvarchar(4000)
+        DT_ATUALIZACAO: nvarchar(4000)
+        BK_TICKET: nvarchar(4000)
+        PRIORIDADE_TICKET: nvarchar(4000)
+
+
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  fiap_challenge_totvs:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view
